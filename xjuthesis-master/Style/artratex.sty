@@ -449,6 +449,11 @@
     \phantomsection% create link in bookmarks
     \addcontentsline{toc}{#1}{#2}% add content #2 to toc as #1
 }
+\newcommand{\hiddenchapter}[1]{
+    \stepcounter{chapter}
+    \chapter*{{#1}}
+}
+
 %-
 %-> Page header and footer Style
 %-
