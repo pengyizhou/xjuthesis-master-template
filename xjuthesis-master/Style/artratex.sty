@@ -236,6 +236,7 @@
     \ifartx@times%
         \setmainfont[NFSSFamily=entextrm]{Times New Roman}%
         \setsansfont[NFSSFamily=entextsf]{Times New Roman}%
+        \setmonofont{Arial}%
     \else
         \setmainfont[NFSSFamily=entextrm]{FreeSerif}%
         \setsansfont[NFSSFamily=entextsf]{FreeSerif}%
@@ -454,6 +455,10 @@
     \chapter*{{#1}}
 }
 
+\newcommand{\hiddenchapterabstract}[1]{
+    \stepcounter{chapter}
+    \chapter*{\ttfamily{#1}}
+}
 %-
 %-> Page header and footer Style
 %-
