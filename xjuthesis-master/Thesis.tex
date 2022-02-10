@@ -1,0 +1,86 @@
+%---------------------------------------------------------------------------%
+%-                                                                         -%
+%-                           LaTeX Template                                -%
+%-                                                                         -%
+%---------------------------------------------------------------------------%
+%- Copyright (C) Huangrui Mo <huangrui.mo@gmail.com>
+%- This is free software: you can redistribute it and/or modify it
+%- under the terms of thexju General Public License as published by
+%- the Free Software Foundation, either versio        
+%---------------------------------------------------------------------------%
+%->> Document class declaration
+%---------------------------------------------------------------------------%
+\documentclass[singlesided]{Style/xjuthesis}%
+%- Multiple optional arguments:
+%- [<singlesided|doublesided|printcopy>]% set one or two sided eprint or print
+%- [draftversion]% show draft version information
+%- [fontset=<fandol|...>]% specify font set to replace automatic detection
+%- [scheme=plain]% thesis writing of international students
+%- [standard options for ctex book class: draft|paper size|font size|...]%
+%---------------------------------------------------------------------------%
+%->> Document settings
+%---------------------------------------------------------------------------%
+\usepackage[super,myhdr,list]{Style/artratex}% document settings
+%- usage: \usepackage[option1,option2,...,optionN]{artratex}
+%- Multiple optional arguments:
+%- [bibtex|biber]% set bibliography processor and package
+%- [<numbers|super|authoryear|alpha>]% set citation and reference style
+%- <numbers>: textual: Jones [1]; parenthetical: [1]
+%- <super>: textual: Jones superscriptB [1]; parenthetical: superscript [1]
+%- <authoryear>: textual: Jones (1995); parenthetical: (Jones, 1995)
+%- <alpha>: textual: not available; parenthetical: [Jon95]
+%- [geometry]% reconfigure page layout via geometry package
+%- [lscape]% provide landscape layout environment
+%- [myhdr]% enable header and footer via fancyhdr package
+%- [color]% provide color support via xcolor package
+%- [background]% enable page background
+%- [tikz]% provide complex diagrams via tikz package
+%- [table]% provide complex tables via ctable package
+%- [list]% provide enhanced list environments for algorithm and coding
+%- [math]% enable some extra math packages
+\usepackage{Style/artracom}% user defined commands
+%---------------------------------------------------------------------------%
+%->> Document inclusion
+%---------------------------------------------------------------------------%
+%\includeonly{Tex/Chap_1,...,Tex/Chap_N}% selected files compilation
+%---------------------------------------------------------------------------%
+%->> Document content
+%---------------------------------------------------------------------------%
+\begin{document}
+%-
+%-> Frontmatter: title page, abstract, content list, symbol list, preface
+%-
+\frontmatter% 使用罗马数字标记页码
+\input{Tex/Frontpages}% title page, abstract, dedication
+{% content list region
+\linespread{1.2}% local line space
+%\intotoc{\contentsname}% add link to contents table and bookmark
+\tableofcontents% contents catalog %生成目录
+%\intotoc{\listfigurename}% add link to contents table and bookmark
+%\listoffigures% figures catalog %//图列表
+%\intotoc{\listtablename}% add link to contents table and bookmark
+%\listoftables% tables catalog  %//表格列表
+}
+
+%\input{Tex/Prematter}% list of symbols, preface content %//符号列表
+%-
+%-> Mainmatter
+%-
+\mainmatter% 使用阿拉伯数字标记页码
+\input{Tex/Mainmatter}% main content
+%-
+%-> Appendix
+%-
+\cleardoublepage%
+\appendix% initialize the environment
+\input{Tex/Appendix}% appendix content
+%-
+%-> Backmatter: bibliography, glossary, index
+%-
+\backmatter% initialize the environment
+\intotoc{\bibname}% add link to contents table and bookmark
+
+\bibliography{Biblio/ref}% bibliography
+\input{Tex/Backmatter}% other information
+\end{document}
+%---------------------------------------------------------------------------%
