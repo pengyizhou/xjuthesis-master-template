@@ -1,0 +1,30 @@
+\contentsline {chapter}{\numberline {第1章\hspace {.3em}}引言}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}系统要求}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}问题反馈}{2}{section.1.2}%
+\contentsline {section}{\numberline {1.3}模板下载}{2}{section.1.3}%
+\contentsline {chapter}{\numberline {第2章\hspace {.3em}}\LaTeX {}使用说明}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}先试试效果}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}文档目录简介}{3}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Thesis.tex}{3}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}编译脚本}{4}{subsection.2.2.2}%
+\contentsline {subsection}{\numberline {2.2.3}Tmp文件夹}{4}{subsection.2.2.3}%
+\contentsline {subsection}{\numberline {2.2.4}Style文件夹}{4}{subsection.2.2.4}%
+\contentsline {subsection}{\numberline {2.2.5}Tex文件夹}{4}{subsection.2.2.5}%
+\contentsline {subsection}{\numberline {2.2.6}Img文件夹}{5}{subsection.2.2.6}%
+\contentsline {subsection}{\numberline {2.2.7}Biblio文件夹}{5}{subsection.2.2.7}%
+\contentsline {section}{\numberline {2.3}数学公式、图表、参考文献等功能}{5}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}数学公式}{5}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}表格}{6}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}图片插入}{6}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}算法}{6}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}参考文献引用}{8}{subsection.2.3.5}%
+\contentsline {section}{\numberline {2.4}常见使用问题}{9}{section.2.4}%
+\contentsline {chapter}{\numberline {附录 A\hspace {.3em}}新疆大学学位论文撰写要求}{12}{appendix.A}%
+\contentsline {section}{\numberline {A.1}论文无附录者无需附录部分}{12}{section.A.1}%
+\contentsline {section}{\numberline {A.2}测试公式编号}{12}{section.A.2}%
+\contentsline {section}{\numberline {A.3}测试生僻字}{12}{section.A.3}%
+\contentsline {chapter}{参考文献}{14}{section*.9}%
+\contentsline {chapter}{攻读硕士学位期间发表的学术论文清单}{14}{appendix*.10}%
+\contentsline {chapter}{致谢}{15}{appendix*.11}%
+\contentsline {chapter}{学位论文独创声明}{16}{appendix*.12}%
+\contentsline {chapter}{学位论文知识产权权属声明}{17}{appendix*.13}%

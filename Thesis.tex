@@ -39,6 +39,28 @@
 %- [list]% provide enhanced list environments for algorithm and coding
 %- [math]% enable some extra math packages
 \usepackage{Style/artracom}% user defined commands
+\usepackage{amsmath,amsfonts}
+\usepackage{fontspec}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{multirow}
+\usepackage{dcolumn}
+\usepackage{color}
+\usepackage{zref-perpage}
+\usepackage{pifont}
+\newcommand*\dingctr[1]{%
+  \protect\ding{\number\numexpr\value{#1}+171\relax}}
+% \renewcommand*\thefootnote{\dingctr{footnote}}
+
+
+\makeatletter
+\renewcommand\thefootnote{\textcircled{\@arabic\c@footnote}}
+\def\@makefnmarkNormal{\lower .3ex \hbox{\normalfont\@thefnmark}}
+\renewcommand\@makefntext[1]{%
+  \setlength\leftskip{1.2\ccwd}%
+  \setlength\parindent{2\ccwd}\rmfamily
+  \noindent\llap{\@thefnmark\ }#1}
+\setlength{\skip\footins}{18pt}
 %---------------------------------------------------------------------------%
 %->> Document inclusion
 %---------------------------------------------------------------------------%
@@ -47,6 +69,7 @@
 %->> Document content
 %---------------------------------------------------------------------------%
 \begin{document}
+
 %-
 %-> Frontmatter: title page, abstract, content list, symbol list, preface
 %-
