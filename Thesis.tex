@@ -52,7 +52,9 @@
   \protect\ding{\number\numexpr\value{#1}+171\relax}}
 % \renewcommand*\thefootnote{\dingctr{footnote}}
 
-
+\renewcommand\toprule{\specialrule{1.5pt}{0pt}{.65ex}}
+\renewcommand\bottomrule{\specialrule{1.5pt}{0pt}{.65ex}}
+\renewcommand\midrule{\specialrule{1.0pt}{0pt}{.65ex}}
 \makeatletter
 \renewcommand\thefootnote{\textcircled{\@arabic\c@footnote}}
 \def\@makefnmarkNormal{\lower .3ex \hbox{\normalfont\@thefnmark}}
