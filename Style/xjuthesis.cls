@@ -157,6 +157,8 @@
 %-
 %-> Redefine Chinese style
 %-
+% \setlength{\tabcolsep}{20pt}
+% % \renewcommand{\arraystretch}{2}
 \renewcommand{\maketitle}
     {%
     \cleardoublepage
@@ -164,12 +166,12 @@
 
     \title{}
     %
-    {\noindent\zihao{4}\bfseries\heiti {\xju@label@masthesis}}
-
+    {\noindent\zihao{-3}\heiti {\xju@label@masthesis}} 
+    
     \begin{center}
         \linespread{1.5}
 
-        \vspace*{\stretch{5}}
+        \vspace*{\stretch{2}}
 
         %{\chuhao\hwxk\xju@label@universityname}
         \begin{figure}[!htbp]
@@ -177,11 +179,13 @@
             \includegraphics{\xju@value@schoollogo}
         \end{figure}
 
-        \vspace*{\stretch{5.5}}
+        \vspace*{\stretch{2}}
 
         \def\tabcolsep{1pt}
-        \def\arraystretch{1.3}
-
+        \def\arraystretch{1.75}
+        % \begin{spacing}{1.85}
+    {
+        
         \begin{tabular}{p{4.2cm}p{10cm}}
             \zihao{-3}\bfseries\songti\xju@label@ctitle & \zihao{-3}\bfseries\songti\xju@value@ctitle\\
             \zihao{-3}\bfseries\songti\xju@label@etitle & \zihao{-3}\bfseries\songti\xju@value@etitle\\
@@ -190,13 +194,16 @@
             \zihao{-3}\bfseries\songti\xju@label@researchdirection & \zihao{-3}\bfseries\songti\xju@value@researchdirection\\
             \zihao{-3}\bfseries\songti\xju@label@advisor & \zihao{-3}\bfseries\songti\xju@value@advisor\\
         \end{tabular}
-
-        \vspace*{\stretch{5}}
-
-        {\zihao{4}\heiti\xju@label@replydate}\\
-        {\zihao{4}\heiti\xju@label@dateofdegreeaward}
-
+        }
+        % \end{spacing}
+        \vspace*{\stretch{3}}
     \end{center}
+    
+    \hfill{\zihao{-3}\heiti\xju@label@replydate}
+    
+    \hfill{\zihao{-3}\heiti\xju@label@dateofdegreeaward}
+
+
     \clearpage  %添加新的一页
     \if@twoside
         \thispagestyle{empty}

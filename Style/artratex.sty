@@ -183,6 +183,9 @@
 %-
 %-> Language settings
 %-
+\setCJKfamilyfont{zhsong}{simsun.ttc}
+\renewcommand{\songti}{\CJKfamily{zhsong}}
+
 \ifartx@pdftex% <pdflatex> call font packages
     \RequirePackage[utf8]{inputenc}% set input encoding, document must use utf-8 encoding
     \RequirePackage[T1]{fontenc}% set font encoding to enable modern font encoding
@@ -220,11 +223,11 @@
     %\RequirePackage{unicode-math}% another math symbol font configuration
     %\setmathfont{XITS Math}% a complete symbol set for STIX math fonts
     \ifartx@windows%
-        \setCJKmainfont[AutoFakeBold,ItalicFont=KaiTi]{SimSun}%
+        \setCJKmainfont[AutoFakeBold,ItalicFont=KaiTi,BoldItalicFont=SimSun]{SimSun}%
         \setCJKsansfont[AutoFakeBold]{SimHei}%
         \setCJKmonofont{FangSong}%
     \else\ifartx@mac%
-        \setCJKmainfont[ItalicFont=Kaiti SC,BoldItalicFont=Kaiti SC Bold]{SimSun}%
+        \setCJKmainfont[ItalicFont=SimSun,BoldItalicFont=SimSun]{SimSun}%
         \setCJKsansfont{SimHei}%
         \setCJKmonofont{STFangsong}%
 
@@ -322,7 +325,7 @@
 %-
 \ifartx@geometry% enable geometry to redefine page layout
     \RequirePackage{geometry}% page layout
-    %\RequirePackage{setspace}% line spacing
+    % \RequirePackage{setspace}% line spacing
 \fi
 \ifartx@lscape% landscape layout
     \RequirePackage{fancyhdr}% fancy headers and footers
@@ -460,6 +463,7 @@
     \stepcounter{chapter}
     \chapter*{\ttfamily{#1}}
 }
+
 %-
 %-> Page header and footer Style
 %-

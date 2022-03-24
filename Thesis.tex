@@ -10,7 +10,7 @@
 %---------------------------------------------------------------------------%
 %->> Document class declaration
 %---------------------------------------------------------------------------%
-\documentclass[singlesided]{Style/xjuthesis}%
+\documentclass[singlesided,AutoFakeBold]{Style/xjuthesis}%
 %- Multiple optional arguments:
 %- [<singlesided|doublesided|printcopy>]% set one or two sided eprint or print
 %- [draftversion]% show draft version information
@@ -38,6 +38,7 @@
 %- [table]% provide complex tables via ctable package
 %- [list]% provide enhanced list environments for algorithm and coding
 %- [math]% enable some extra math packages
+
 \usepackage{Style/artracom}% user defined commands
 \usepackage{amsmath,amsfonts}
 \usepackage{fontspec}
@@ -48,6 +49,57 @@
 \usepackage{color}
 \usepackage{zref-perpage}
 \usepackage{pifont}
+\usepackage{enumitem}
+\usepackage{lipsum}
+% \usepackage{setspace}
+
+\makeatletter
+
+%% 定义对齐方式 hang
+\setenumerate[1]{label=\roman*,labelsep*=5pt, align=left, leftmargin=*}
+\SetLabelAlign{hang}{%
+
+[#1]%
+
+\aftergroup\adjustparshapeindent}
+
+%% 编号 #1 会通过 \sbox 存到 \@tempboxa 中，为避免全局设置，
+
+%% 需要用 \aftergroup 跳到盒子外部来设置
+
+\newcommand*\adjustparshapeindent{%
+
+\@ifnextchar\egroup
+
+{\aftergroup\adjustparshapeindent}
+
+{\adjustparshapeindent@auxi}}
+
+\newcommand*\adjustparshapeindent@auxi{%
+
+\unless\ifdim\wd\@tempboxa=\labelwidth
+
+\adjustparshapeindent@auxii
+
+\fi}
+
+%% 调整 \parshape 的缩进
+
+\newcommand*\adjustparshapeindent@auxii{%
+
+\dimen@ = \dimexpr\wd\@tempboxa-\labelwidth\relax
+
+\labelwidth = \wd\@tempboxa
+
+\advance\linewidth -\dimen@
+
+\advance\leftmargin \dimen@
+
+\advance\@totalleftmargin \dimen@
+
+\parshape \@ne \@totalleftmargin \linewidth}
+
+\makeatother
 \newcommand*\dingctr[1]{%
   \protect\ding{\number\numexpr\value{#1}+171\relax}}
 % \renewcommand*\thefootnote{\dingctr{footnote}}
@@ -55,6 +107,7 @@
 \renewcommand\toprule{\specialrule{1.5pt}{0pt}{.65ex}}
 \renewcommand\bottomrule{\specialrule{1.5pt}{0pt}{.65ex}}
 \renewcommand\midrule{\specialrule{1.0pt}{0pt}{.65ex}}
+
 \makeatletter
 \renewcommand\thefootnote{\textcircled{\@arabic\c@footnote}}
 \def\@makefnmarkNormal{\lower .3ex \hbox{\normalfont\@thefnmark}}
@@ -71,10 +124,11 @@
 %->> Document content
 %---------------------------------------------------------------------------%
 \begin{document}
-
 %-
 %-> Frontmatter: title page, abstract, content list, symbol list, preface
 %-
+\zmakeperpage{footnote}
+
 \frontmatter% 使用罗马数字标记页码
 \input{Tex/Frontpages}% title page, abstract, dedication
 {% content list region
@@ -100,7 +154,7 @@
 %-
 \cleardoublepage%
 \appendix% initialize the environment
-\input{Tex/Appendix}% appendix content
+% \input{Tex/Appendix}% appendix content
 %-
 %-> Backmatter: bibliography, glossary, index
 %-
